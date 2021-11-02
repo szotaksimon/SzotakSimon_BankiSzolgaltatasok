@@ -23,4 +23,16 @@ public class Bank {
             return null;
         }
     }
+
+    public int osszEgyenleg(Tulajdonos tulajdonos){
+        int egyenleg = 0;
+        for (Szamla szamla : szamlaLista) {
+            if (szamla.getTulajdonos().getNev().equals(tulajdonos.getNev())) {
+                egyenleg += szamla.getAktualisEgyenleg();
+            }
+        }
+        return egyenleg;
+    }
+
+
 }
